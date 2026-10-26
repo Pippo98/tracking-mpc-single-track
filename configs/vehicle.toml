@@ -1,0 +1,30 @@
+# Vehicle parameters, used by both the racing line OCP and the MPC.
+# A rear-wheel-drive sports sedan (about 1.5 t and 250 hp). SI units, angles in rad.
+
+# Mass and geometry
+m = 1500.0       # kg, mass
+Izz = 2500.0     # kg m^2, yaw moment of inertia
+lf = 1.35        # m, centre of mass to front axle
+lr = 1.45        # m, centre of mass to rear axle
+width = 1.9      # m, the racing line keeps the whole car inside the track
+
+# Tyres: linear, up to the slip angle alpha_max, then limited by the friction circle mu * g.
+# Cr / Cf > lf / lr makes the car understeer (stable at any speed).
+Cf = 90e3        # N/rad, cornering stiffness of the front axle
+Cr = 110e3       # N/rad, cornering stiffness of the rear axle
+alpha_max = 0.087  # rad (5 deg), maximum tyre slip angle
+mu = 1.0         # friction coefficient
+
+# Powertrain and brakes, torques at the wheels
+R = 0.33         # m, wheel radius
+T_mot = 3000.0   # Nm, maximum drive torque (rear axle)
+P_max = 180e3    # W, maximum power
+T_br = 6000.0    # Nm, maximum brake torque (both axles)
+gamma = 0.65     # front share of the brake torque
+
+# Aerodynamics
+CdA = 0.7        # m^2, drag coefficient times frontal area
+
+# Steering (front wheel angle, not steering wheel angle)
+delta_max = 0.5    # rad
+ddelta_max = 1.0   # rad/s

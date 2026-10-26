@@ -1,0 +1,10 @@
+[project]
+name = "tracking-mpc"
+version = "0.1.0"
+description = "Nonlinear MPC tracking a minimum lap time racing line, with CasADi"
+requires-python = ">=3.11"
+dependencies = [
+    "casadi>=3.7",
+    "matplotlib>=3.9",
+    "numpy>=2.0",
+]

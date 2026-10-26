@@ -1,0 +1,16 @@
+# Step 2: MPC tracking the racing line, simulated for one lap.
+
+N = 40            # nodes of the horizon
+T = 2.5           # s, horizon length (converted to a distance with the reference speed)
+dt = 0.05         # s, control period: the MPC is solved every dt
+
+# Cost weights
+[weights]
+n = 20.0          # lateral error from the racing line
+u = 1.0           # speed error
+xi = 10.0         # heading error
+ddelta = 1.0      # steering rate
+dp = 10.0         # change of throttle / brake between nodes
+n_f = 200.0       # lateral error at the end of the horizon
+xi_f = 100.0      # heading error at the end of the horizon
+slack = 1e3       # violation of the soft constraints (slip angles, friction circle, track borders)

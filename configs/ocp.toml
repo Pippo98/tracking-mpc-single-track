@@ -1,0 +1,6 @@
+# Step 1: minimum lap time OCP, which gives the racing line the MPC tracks.
+
+track = "tracks/silverstone.csv"
+ds = 2.0          # m, mesh step along the track centre line
+grip = 0.9        # fraction of the friction circle mu * g the racing line may use (margin for the MPC)
+margin = 0.3      # m, distance kept from each border, on top of half the car width
